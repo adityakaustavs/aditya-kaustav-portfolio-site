@@ -11,9 +11,9 @@ const Hero = () => {
         <div className="animate-fade-in">
           <div className="mb-8">
             <img 
-              src="https://i.postimg.cc/gjH5mdzp/Whats-App-Image-2025-06-10-at-7-10-55-PM.jpg"
+              src="/lovable-uploads/c28c08aa-1c56-43f1-93c0-6040d59d72fc.png"
               alt="Aditya Kaustav S"
-              className="w-48 h-48 rounded-full mx-auto mb-6 border-4 border-blue-500 shadow-2xl hover:scale-105 transition-transform duration-300"
+              className="w-48 h-48 rounded-full mx-auto mb-6 border-4 border-blue-500 shadow-2xl hover:scale-105 transition-transform duration-300 object-cover"
             />
           </div>
           
@@ -37,8 +37,7 @@ const Hero = () => {
               View Projects
             </Button>
             <Button 
-              variant="outline" 
-              className="border-white text-white hover:bg-white hover:text-blue-900 px-8 py-3 text-lg transition-all duration-300 hover:scale-105"
+              className="bg-white text-blue-900 hover:bg-gray-100 px-8 py-3 text-lg transition-all duration-300 hover:scale-105 border-0"
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             >
               Contact Me
