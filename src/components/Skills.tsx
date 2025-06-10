@@ -2,41 +2,48 @@
 import React from 'react';
 
 const Skills = () => {
-  const skills = [
-    { name: 'C++', level: 90 },
-    { name: 'Data Structures & Algorithms', level: 88 },
-    { name: 'MERN Stack', level: 85 },
-    { name: 'JavaScript', level: 90 },
-    { name: 'React.js', level: 88 },
-    { name: 'Node.js', level: 85 },
-    { name: 'MongoDB', level: 82 },
-    { name: 'SQL', level: 85 },
-    { name: 'Power BI', level: 80 },
-    { name: 'HTML/CSS', level: 92 }
+  const skillCategories = [
+    {
+      title: 'Programming Languages',
+      skills: ['C++', 'JavaScript', 'HTML', 'CSS'],
+      color: 'from-blue-500 to-cyan-500'
+    },
+    {
+      title: 'Frameworks & Libraries',
+      skills: ['React.js', 'Node.js', 'Express.js'],
+      color: 'from-green-500 to-emerald-500'
+    },
+    {
+      title: 'Databases & Analytics',
+      skills: ['MongoDB', 'SQL', 'DBMS', 'Power BI', 'Excel'],
+      color: 'from-purple-500 to-pink-500'
+    },
+    {
+      title: 'Core Concepts',
+      skills: ['Data Structures', 'Algorithms', 'MERN Stack'],
+      color: 'from-orange-500 to-red-500'
+    }
   ];
 
   return (
-    <section id="skills" className="py-20 bg-gray-900">
+    <section id="skills" className="py-20 bg-gradient-to-br from-blue-900 via-blue-800 to-purple-900">
       <div className="container mx-auto px-6">
-        <h2 className="text-4xl font-bold text-center mb-12 text-white">Skills</h2>
+        <h2 className="text-4xl font-bold text-center mb-12 text-white">Skills & Technologies</h2>
         
-        <div className="max-w-4xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {skills.map((skill, index) => (
-              <div key={index} className="bg-gray-800 rounded-lg p-6 hover:bg-gray-700 transition-colors duration-300">
-                <div className="flex justify-between items-center mb-2">
-                  <span className="text-white font-medium">{skill.name}</span>
-                  <span className="text-blue-400">{skill.level}%</span>
-                </div>
-                <div className="w-full bg-gray-600 rounded-full h-2">
-                  <div 
-                    className="bg-gradient-to-r from-blue-500 to-purple-600 h-2 rounded-full transition-all duration-1000 ease-out"
-                    style={{ width: `${skill.level}%` }}
-                  ></div>
-                </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {skillCategories.map((category, index) => (
+            <div key={index} className="bg-gray-800/50 rounded-lg p-6 backdrop-blur-sm border border-gray-700/50 hover:border-blue-500/50 transition-all duration-300">
+              <h3 className="text-xl font-bold text-white mb-6 text-center">{category.title}</h3>
+              
+              <div className="space-y-3">
+                {category.skills.map((skill, skillIndex) => (
+                  <div key={skillIndex} className={`bg-gradient-to-r ${category.color} text-white px-4 py-2 rounded-lg text-center font-medium hover:scale-105 transition-transform duration-200`}>
+                    {skill}
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
